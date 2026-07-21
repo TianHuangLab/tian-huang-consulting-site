@@ -1,6 +1,6 @@
 site:
   name: Tian HUANG
-  site: 'https://tian-huang.netlify.app'
+  site: 'https://huang-tian.netlify.app'
   base: '/'
   trailingSlash: false
 
