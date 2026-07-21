@@ -1,0 +1,160 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Dashboard Attribution Marketing & Réconciliation Revenue',
+  description:
+    'Dashboard Looker Studio et BigQuery pour centraliser coûts, revenus, marge, ROAS, MER et qualité des données marketing.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Revenue Attribution Dashboard"
+    title="Un dashboard pour aligner Ads, GA4, CRM et revenu réel."
+    subtitle="Ce service aide les équipes marketing et direction à sortir du débat permanent sur les chiffres. On définit les sources, les règles de réconciliation et les indicateurs à utiliser pour piloter les budgets."
+    actions={[
+      { variant: 'primary', text: 'Aligner mes chiffres', href: '/prendre-un-rdv', icon: 'tabler:calendar' },
+      { text: 'Voir les cas', href: '/cas' },
+    ]}
+  />
+
+  <Features
+    tagline="Probleme"
+    title="Un dashboard ne doit pas seulement être joli."
+    subtitle="Il doit expliquer d’où viennent les chiffres, quelles définitions sont utilisées et quels écarts restent à surveiller."
+    columns={3}
+    items={[
+      {
+        title: 'Les plateformes surestiment parfois',
+        description:
+          'Fenêtre d’attribution, view-through, modeled data et déduplication peuvent gonfler la performance apparente.',
+        icon: 'tabler:chart-infographic',
+      },
+      {
+        title: 'GA4 ne voit pas tout',
+        description:
+          'Consentement, ad blockers, erreurs de tags ou payload incomplet peuvent reduire ou fausser les données observées.',
+        icon: 'tabler:eye-off',
+      },
+      {
+        title: 'Le back-office a ses propres définitions',
+        description: 'Refunds, taxes, shipping, discounts, marge et commandes annulées changent la lecture du revenu.',
+        icon: 'tabler:database-dollar',
+      },
+    ]}
+  />
+
+  <Features2
+    tagline="Pages du dashboard"
+    title="Trois vues pour décider plus clairement."
+    columns={3}
+    items={[
+      {
+        title: 'Executive View',
+        description:
+          'Spend, revenu net, marge, ROAS, MER, CAC, tendances et alertes budget. Une page pour la direction.',
+        icon: 'tabler:presentation-analytics',
+      },
+      {
+        title: 'Channel Performance',
+        description: 'Source, medium, campaign, first touch, last touch, revenu plateforme et revenu back-office.',
+        icon: 'tabler:route',
+      },
+      {
+        title: 'Data Quality',
+        description: 'Transactions dupliquées, UTM manquants, orders non retrouves, écarts et fraîcheur des données.',
+        icon: 'tabler:shield-check',
+      },
+    ]}
+  />
+
+  <Content
+    tagline="Livrables"
+    title="Des chiffres utiles parce qu’ils sont définis."
+    items={[
+      {
+        title: 'Data source map',
+        description: 'Cartographie des sources: Ads, GA4, CRM, back-office, coûts et revenus.',
+        icon: 'tabler:map-2',
+      },
+      {
+        title: 'Source-of-truth rules',
+        description: 'Définition du chiffre à utiliser selon la décision: finance, optimisation ou analyse.',
+        icon: 'tabler:database-cog',
+      },
+      {
+        title: 'KPI dictionary',
+        description: 'Definitions de ROAS, MER, CAC, revenu brut, revenu net, marge et conversions.',
+        icon: 'tabler:book-2',
+      },
+      {
+        title: 'Réconciliation table',
+        description: 'Tableau des écarts raisonnables, anomalies et limites connues.',
+        icon: 'tabler:table',
+      },
+      {
+        title: 'Looker Studio dashboard',
+        description: 'Dashboard clair pour lecture direction et marketing.',
+        icon: 'tabler:dashboard',
+      },
+      {
+        title: 'Data quality signals',
+        description: 'Indicateurs de confiance pour savoir si les chiffres sont exploitables.',
+        icon: 'tabler:checks',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Revenue attribution dashboard',
+    }}
+  >
+    <Fragment slot="content">
+      <p>
+        Le but n’est pas de faire disparaître tous les écarts. Le but est de les rendre explicables, surveillables et
+        utilisables pour des décisions budgetaires plus fiables.
+      </p>
+    </Fragment>
+  </Content>
+
+  <FAQs
+    tagline="FAQ"
+    title="Questions fréquentes"
+    items={[
+      {
+        title: 'Est-ce que le dashboard remplace GA4 ?',
+        description:
+          'Non. Il complète GA4 en ajoutant coûts, revenu back-office, définitions business et signaux de qualité des données.',
+      },
+      {
+        title: 'Est-ce que tous les chiffres vont matcher ?',
+        description:
+          'Non. Certains écarts sont normaux. Le dashboard doit expliquer pourquoi ils existent et quelles décisions utiliser avec chaque source.',
+      },
+      {
+        title: 'Faut-il BigQuery ?',
+        description:
+          'Pas toujours pour une V1. BigQuery devient utile quand il faut historiser, joindre, dédupliquer ou structurer plusieurs sources.',
+      },
+      {
+        title: 'Peut-on integrer la marge ?',
+        description:
+          'Oui si la donnée est disponible. C’est souvent plus utile que le revenu brut pour piloter les budgets.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Aligner mes chiffres', href: '/prendre-un-rdv', icon: 'tabler:calendar' }]}
+  >
+    <Fragment slot="title">Vos dashboards génèrent plus de débats que de décisions ?</Fragment>
+    <Fragment slot="subtitle">Construisons une lecture plus fiable de vos coûts, revenus et canaux.</Fragment>
+  </CallToAction>
+</Layout>

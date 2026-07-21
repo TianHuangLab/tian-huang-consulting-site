@@ -1,0 +1,368 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import profile from '~/assets/favicons/profile-tian.png';
+
+const metadata = {
+  title: 'À propos - HUANG Tian',
+  description:
+    'À propos de HUANG Tian: profil digital marketing et e-commerce pour cadrer, auditer et documenter des problèmes de tracking, attribution et data quality.',
+};
+
+const experienceSignals = [
+  {
+    label: 'Expérience terrain',
+    value: 'E-commerce, pricing, marketplace',
+  },
+  {
+    label: 'Culture outils',
+    value: 'GA4, GTM, PrestaShop, Akeneo, ERP',
+  },
+  {
+    label: 'Format de mission',
+    value: 'Audit court, cadrage, livrables',
+  },
+];
+
+const capabilityAreas = [
+  {
+    number: '01',
+    title: 'Comprendre le contexte business',
+    points: [
+      'Prix, catalogue, marketplace et revenu',
+      'Parcours client et conversion',
+      'Contraintes operationnelles côté e-commerce',
+      'Impact des chiffres sur les décisions',
+    ],
+  },
+  {
+    number: '02',
+    title: 'Diagnostiquer la chaîne de mesure',
+    points: [
+      'GA4, GTM, events, conversions',
+      'Ecarts Ads / analytics / back-office',
+      'Consentement, perte de signal et qualité des données',
+      'Tracking de formulaires, achats et demandes',
+    ],
+  },
+  {
+    number: '03',
+    title: 'Produire des preuves',
+    points: [
+      'Tests reproductibles et captures',
+      'Measurement plan et checklist QA',
+      'Table de réconciliation simple',
+      'KPI dictionary et règles de lecture',
+    ],
+  },
+  {
+    number: '04',
+    title: 'Cadrer une suite realiste',
+    points: [
+      'Priorites P0 / P1 / P2',
+      'Ce qui est fiable, limité ou à corriger',
+      'Périmètre adapté à une mission part-time',
+      'Recommandation claire pour l’équipe',
+    ],
+  },
+];
+
+const proofAssets = [
+  'Audit tracking e-commerce',
+  'Réconciliation Meta / GA4 / back-office',
+  'Validation Consent Mode',
+  'Dashboard data quality',
+];
+
+const toolGroups = [
+  {
+    title: 'Collecte & tracking',
+    tools: ['GA4', 'Google Tag Manager', 'Consent Mode', 'Matomo / Piwik'],
+  },
+  {
+    title: 'E-commerce & catalogue',
+    tools: ['PrestaShop', 'Akeneo', 'ERP', 'Marketplace'],
+  },
+  {
+    title: 'Flux & acquisition',
+    tools: ['Lengow', 'Shoppingfeed', 'Meta Ads', 'Google Ads'],
+  },
+  {
+    title: 'Reporting & décision',
+    tools: ['Looker Studio', 'Spreadsheets', 'KPI dictionary', 'Réconciliation tables'],
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="not-prose mx-auto max-w-6xl px-4 py-14 sm:px-6 md:py-20">
+    <div class="grid gap-12 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-center">
+      <div>
+        <p class="mb-5 text-sm font-bold uppercase tracking-wide text-primary">
+          Digital marketing · E-commerce opérations · Tracking & attribution
+        </p>
+        <h1 class="font-heading text-4xl font-bold tracking-tight text-gray-900 dark:text-white md:text-6xl">
+          J’aide à clarifier les chiffres marketing quand les outils ne racontent pas la même histoire.
+        </h1>
+        <div class="mt-7 max-w-3xl space-y-5 text-xl leading-relaxed text-muted dark:text-slate-400">
+          <p>
+            Mon point de depart est le digital marketing et les opérations e-commerce: pricing, e-merchandising,
+            marketplace, catalogues produits, flux, CMS et systemes business.
+          </p>
+          <p>
+            Cette expérience me donne une lecture utile des problèmes de tracking: un chiffre n’est jamais seulement un
+            tag. Il dépend d’un parcours client, d’un produit, d’une source, d’une commande, d’un consentement et d’une
+            décision à prendre.
+          </p>
+        </div>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a class="btn-primary" href="/prendre-un-rdv">Prendre un RDV</a>
+          <a class="btn-secondary" href="/cas">Voir les cas en construction</a>
+        </div>
+      </div>
+
+      <aside class="mx-auto w-full max-w-[300px] lg:mx-0">
+        <div
+          class="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-900"
+        >
+          <img
+            src={profile.src}
+            alt="HUANG Tian"
+            width="600"
+            height="600"
+            class="aspect-square w-full object-cover"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+        <p class="mt-4 text-sm leading-relaxed text-muted dark:text-slate-400">
+          Basé à Marseille. Missions freelance part-time avec un périmètre clair: cadrage, audit, validation ou premier
+          livrable decisionnel.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="not-prose border-y border-gray-200 bg-gray-50 py-10 dark:border-slate-700 dark:bg-slate-900">
+    <div class="mx-auto grid max-w-6xl gap-6 px-4 sm:px-6 md:grid-cols-3">
+      {
+        experienceSignals.map((signal) => (
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-wide text-primary">{signal.label}</p>
+            <p class="mt-2 text-lg font-semibold text-gray-900 dark:text-white">{signal.value}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="not-prose mx-auto max-w-4xl px-4 py-14 sm:px-6 md:py-20">
+    <p class="mb-4 text-sm font-bold uppercase tracking-wide text-primary">Mon parcours</p>
+    <div class="space-y-6 text-lg leading-relaxed text-muted dark:text-slate-400">
+      <p>
+        Aujourd’hui, je travaille dans une petite entreprise à Marseille, en CDI, sur des sujets de pricing,
+        e-merchandising et marketplace. Avant cela, j’ai touché au product marketing: comprendre une offre, clarifier un
+        positionnement, traduire un besoin client en messages plus lisibles.
+      </p>
+      <p>
+        Ces sujets m’exposent à des données très concrètes: prix, produits, catalogue, flux marketplace, CMS, ERP,
+        back-office et outils de monitoring. Ce ne sont pas seulement des outils. Ce sont des endroits ou la donnée peut
+        devenir utile, incomplète, contradictoire ou mal interprétée.
+      </p>
+      <p>
+        C’est ce qui m’amène naturellement vers le tracking, l’attribution et la data quality. Quand GA4, Ads, CRM ou
+        back-office ne donnent pas la même lecture, mon rôle est de poser les bonnes questions, de chercher les preuves
+        et de rendre la décision plus claire.
+      </p>
+    </div>
+    <blockquote
+      class="mt-10 border-l-4 border-primary pl-6 text-2xl font-semibold leading-snug text-gray-900 dark:text-white"
+    >
+      Le problème n’est pas seulement l’outil. Le problème est souvent la chaîne de mesure autour de l’outil.
+    </blockquote>
+  </section>
+
+  <section class="not-prose mx-auto max-w-6xl px-4 py-14 sm:px-6 md:py-20">
+    <div class="mb-10 max-w-3xl">
+      <p class="mb-3 text-sm font-bold uppercase tracking-wide text-primary">Ce que je construis</p>
+      <h2 class="font-heading text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
+        Une approche utile quand il faut passer du doute à l’action.
+      </h2>
+      <p class="mt-4 text-lg text-muted dark:text-slate-400">
+        Je n’ai pas besoin de promettre que tous les chiffres deviendront identiques. Ce qui compte, c’est de rendre les
+        écarts explicables, les erreurs visibles et les prochaines actions priorisées.
+      </p>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2">
+      {
+        capabilityAreas.map((area) => (
+          <article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+            <p class="text-sm font-bold text-primary">{area.number}</p>
+            <h3 class="mt-3 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{area.title}</h3>
+            <ul class="mt-5 space-y-2 text-muted dark:text-slate-400">
+              {area.points.map((point) => (
+                <li class="flex gap-2">
+                  <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="not-prose bg-gray-950 py-14 text-white md:py-20">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="mb-10 max-w-3xl">
+        <p class="mb-3 text-sm font-bold uppercase tracking-wide text-primary">Positionnement</p>
+        <h2 class="font-heading text-3xl font-bold tracking-tight text-white md:text-4xl">
+          Un cadre clair, puis une aide concrète sur la chaîne de mesure.
+        </h2>
+      </div>
+
+      <div class="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-stretch">
+        <aside class="rounded-lg border border-white/10 bg-white/[0.03] p-6 text-slate-400">
+          <p class="mb-4 text-xs font-semibold uppercase tracking-wide text-slate-500">Je ne suis pas</p>
+          <ul class="space-y-3 text-sm leading-relaxed">
+            <li>Une agence créative.</li>
+            <li>Un média buyer.</li>
+            <li>Un remplaçant de votre équipe data, juridique ou média.</li>
+            <li>Un simple exécutant qui installe un tag sans poser de question.</li>
+          </ul>
+        </aside>
+
+        <article
+          class="rounded-lg border border-primary/40 bg-white p-6 text-gray-900 shadow-xl dark:bg-slate-900 dark:text-white"
+        >
+          <div class="flex items-center gap-3">
+            <span
+              class="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-lg font-bold text-white"
+            >
+              ✓
+            </span>
+            <p class="text-sm font-bold uppercase tracking-wide text-primary">Je suis</p>
+          </div>
+          <ul class="mt-6 space-y-4 text-lg leading-relaxed">
+            <li class="flex gap-3">
+              <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-primary"></span>
+              <span>Un profil digital marketing et e-commerce orienté mesure et fiabilisation.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-primary"></span>
+              <span>Quelqu’un qui relie outils, données, produits, prix, campagnes et décisions business.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-primary"></span>
+              <span>Quelqu’un qui cherche des preuves avant de recommander une correction.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-primary"></span>
+              <span>Un freelance part-time qui privilégie des missions cadrées et documentées.</span>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="not-prose mx-auto max-w-6xl px-4 py-14 sm:px-6 md:py-20">
+    <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_360px]">
+      <div>
+        <p class="mb-3 text-sm font-bold uppercase tracking-wide text-primary">Actifs de confiance</p>
+        <h2 class="font-heading text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
+          Des preuves concrètes plutôt que des logos affiches trop tot.
+        </h2>
+        <p class="mt-4 text-lg text-muted dark:text-slate-400">
+          Pour ce domaine, je construis des cas et des ressources qui montrent ma méthode avant de promettre des
+          résultats. Chaque cas est pense comme une situation client possible, avec un livrable exploitable: audit,
+          measurement plan, table de réconciliation, matrice de test ou spécification de dashboard.
+        </p>
+      </div>
+      <div class="rounded-lg border border-gray-200 bg-gray-50 p-6 dark:border-slate-700 dark:bg-slate-900">
+        <p class="text-sm font-semibold uppercase tracking-wide text-primary">Cas en construction</p>
+        <ul class="mt-5 space-y-3 text-sm font-medium text-gray-900 dark:text-white">
+          {proofAssets.map((asset) => <li>{asset}</li>)}
+        </ul>
+        <a href="/cas" class="mt-6 inline-flex text-sm font-semibold text-primary hover:underline">Voir les cas</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="not-prose border-y border-gray-200 bg-gray-50 py-14 dark:border-slate-700 dark:bg-slate-900 md:py-20">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="mb-8 max-w-3xl">
+        <p class="mb-3 text-sm font-bold uppercase tracking-wide text-primary">Outils et chaîne de données</p>
+        <h2 class="font-heading text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
+          Les outils comptent moins que les liens entre eux.
+        </h2>
+        <p class="mt-4 text-lg text-muted dark:text-slate-400">
+          Je les présente par rôle dans la chaîne de mesure, pas comme une collection de logos. Ce qui compte pour une
+          mission, c’est de comprendre ou la donnée est collectee, transformee, attribuee, reportee puis utilisée.
+        </p>
+      </div>
+      <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        {
+          toolGroups.map((group) => (
+            <article class="rounded-lg border border-gray-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-800">
+              <h3 class="text-sm font-semibold uppercase tracking-wide text-primary">{group.title}</h3>
+              <div class="mt-4 flex flex-wrap gap-2">
+                {group.tools.map((tool) => (
+                  <span class="rounded-full border border-gray-200 px-3 py-1.5 text-sm font-medium text-gray-900 dark:border-slate-600 dark:text-white">
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))
+        }
+      </div>
+      <p class="mt-6 max-w-3xl text-muted dark:text-slate-400">
+        Les outils changent selon les contextes: GA4, GTM, Consent Mode, Looker Studio, PrestaShop, Akeneo, ERP, CRM ou
+        flux marketplace. Mon objectif n’est pas de vendre une stack, mais de vérifier la chaîne qui relie collecte,
+        analyse et décision.
+      </p>
+    </div>
+  </section>
+
+  <section class="not-prose mx-auto max-w-4xl px-4 py-14 sm:px-6 md:py-20">
+    <p class="mb-3 text-sm font-bold uppercase tracking-wide text-primary">Ma façon de travailler</p>
+    <h2 class="font-heading text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
+      Des missions courtes, cadrées, documentées.
+    </h2>
+    <div class="mt-6 space-y-5 text-lg leading-relaxed text-muted dark:text-slate-400">
+      <p>
+        Mes missions freelance sont pensées pour des périmètres raisonnables: audit court, validation de setup,
+        measurement plan, dashboard simple, cadrage d’un site mesurable ou support ponctuel à une équipe.
+      </p>
+      <p>
+        Le format est volontairement clair: un problème, un périmètre, des preuves, un livrable. C’est souvent suffisant
+        pour savoir s’il faut corriger, approfondir ou confier la suite à un spécialiste plus avancé.
+      </p>
+    </div>
+  </section>
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Discuter d’un projet adapté',
+        href: '/prendre-un-rdv',
+        icon: 'tabler:calendar',
+      },
+      {
+        text: 'Lire la methodologie',
+        href: '/methodologie',
+      },
+    ]}
+  >
+    <Fragment slot="title">Vous avez un problème de mesure avec un périmètre clair ?</Fragment>
+    <Fragment slot="subtitle">
+      Je peux vous aider à cadrer le sujet, identifier les zones de risque et produire une première lecture exploitable.
+    </Fragment>
+  </CallToAction>
+</Layout>

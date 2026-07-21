@@ -1,0 +1,202 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Cas clients Tracking & Attribution',
+  description:
+    'Cas types de missions tracking, attribution, réconciliation revenu et data quality pour e-commerce, SaaS, agences et petites entreprises.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Cas"
+    title="Des problèmes concrets, pas des promesses vagues."
+    subtitle="Voici les situations que j’aide à diagnostiquer, corriger et expliquer: écarts de revenu, conversions douteuses, tracking instable, dashboards peu fiables et sites qui ne mesurent pas les demandes entrantes."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Discuter de votre cas',
+        href: '/prendre-un-rdv',
+        icon: 'tabler:calendar',
+      },
+      {
+        text: 'Voir les services',
+        href: '/services',
+      },
+    ]}
+  />
+
+  <Note
+    title="Note :"
+    description="Ces cas sont présentés comme des cas types. Ils servent à montrer la nature des problèmes traités, les analyses menées et les livrables attendus, sans exposer de données confidentielles."
+  />
+
+  <Features2
+    tagline="Cas types"
+    title="Quatre situations ou un consultant tracking devient utile."
+    subtitle="Chaque cas part d’une question business simple: peut-on faire confiance aux chiffres avant de décider ?"
+    columns={2}
+    items={[
+      {
+        title: 'Audit tracking e-commerce',
+        description:
+          'Symptôme: le revenu GA4 ne correspond pas au back-office et les conversions Ads semblent trop optimistes. Objectif: identifier les erreurs critiques, séparer les écarts normaux des bugs et prioriser les corrections.',
+        icon: 'tabler:building-store',
+        callToAction: {
+          text: 'Cadrer un audit',
+          href: '/prendre-un-rdv',
+        },
+      },
+      {
+        title: 'Réconciliation Meta, GA4 et revenu réel',
+        description:
+          'Symptôme: Meta annonce un ROAS positif, mais la marge et le revenu back-office ne confirment pas la lecture. Objectif: redéfinir les sources de vérité et construire une lecture décisionnelle du revenu.',
+        icon: 'tabler:arrows-exchange',
+        callToAction: {
+          text: 'Analyser les écarts',
+          href: '/prendre-un-rdv',
+        },
+      },
+      {
+        title: 'Validation Consent Mode et conversions',
+        description:
+          'Symptôme: les conversions chutent ou deviennent instables après une modification CMP, GTM ou Consent Mode. Objectif: vérifier l’ordre de chargement, les consent states et la qualité des events envoyés.',
+        icon: 'tabler:shield-check',
+        callToAction: {
+          text: 'Vérifier le setup',
+          href: '/prendre-un-rdv',
+        },
+      },
+      {
+        title: 'Dashboard data quality',
+        description:
+          'Symptôme: l’équipe regarde un dashboard, mais personne ne sait quels chiffres sont fiables. Objectif: documenter les KPIs, afficher les limites et rendre les décisions marketing plus lisibles.',
+        icon: 'tabler:dashboard',
+        callToAction: {
+          text: 'Clarifier le reporting',
+          href: '/prendre-un-rdv',
+        },
+      },
+    ]}
+  />
+
+  <Content
+    tagline="Lecture consultant"
+    title="Un bon cas ne raconte pas seulement ce qui a été fait."
+    items={[
+      {
+        title: 'Le contexte business',
+        description:
+          'Quelle décision était bloquee: budget, canal, campagne, dashboard, refonte ou reporting direction.',
+        icon: 'tabler:briefcase',
+      },
+      {
+        title: 'Le symptôme data',
+        description: 'Quels chiffres ne correspondaient pas: GA4, Ads, CRM, back-office, formulaires ou exports.',
+        icon: 'tabler:activity',
+      },
+      {
+        title: 'La méthode de diagnostic',
+        description: 'Quels tests ont permis de distinguer les écarts normaux des erreurs techniques.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'La décision rendue possible',
+        description: 'Ce que l’équipe peut faire après: corriger, piloter, investir, couper, documenter ou monitorer.',
+        icon: 'tabler:target-arrow',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Analyse de données marketing et tableaux de bord',
+    }}
+  >
+    <Fragment slot="content">
+      <p>
+        Pour un client, un cas utile doit être lisible rapidement. Il doit montrer le problème, la démarche, les preuves
+        utilisées et la valeur business obtenue. C’est aussi une façon de montrer votre posture: vous n’êtes pas la pour
+        vendre un outil, mais pour rendre une chaîne de mesure plus fiable.
+      </p>
+    </Fragment>
+  </Content>
+
+  <Features
+    tagline="Livrables visibles dans les cas"
+    title="Ce que les missions produisent concretement."
+    subtitle="Les cas doivent rendre tangible votre travail, même quand les données client restent confidentielles."
+    columns={3}
+    items={[
+      {
+        title: 'Carte des anomalies',
+        description: 'Liste des problèmes avec preuve, gravité, source concernée et impact business probable.',
+        icon: 'tabler:map-search',
+      },
+      {
+        title: 'Plan de correction',
+        description: 'Actions priorisées pour stabiliser events, conversions, UTM, consentement ou revenu.',
+        icon: 'tabler:route',
+      },
+      {
+        title: 'Règles de lecture',
+        description: 'Définition claire des chiffres à utiliser pour optimisation, reporting, finance ou direction.',
+        icon: 'tabler:clipboard-list',
+      },
+    ]}
+  />
+
+  <FAQs
+    tagline="FAQ"
+    title="Comment lire ces cas ?"
+    items={[
+      {
+        title: 'Pourquoi parler de cas types plutôt que de clients nommés ?',
+        description:
+          'Parce que les sujets tracking touchent souvent à des données sensibles: revenu, budget média, marge, CRM et performance commerciale. Les cas types permettent d’expliquer la valeur sans exposer de données confidentielles.',
+      },
+      {
+        title: 'Est-ce que ces cas remplacent un portfolio classique ?',
+        description:
+          'Non. Ils servent surtout à montrer votre logique de diagnostic. Plus tard, chaque cas pourra devenir une page détaillée avec contexte, méthode, livrables et enseignements.',
+      },
+      {
+        title: 'Que faire si mon problème ressemble à plusieurs cas ?',
+        description:
+          'C’est fréquent. Un problème de revenu peut venir du tracking, du consentement, de l’attribution ou du dashboard. Le premier rendez-vous sert justement à cadrer la bonne porte d’entrée.',
+      },
+      {
+        title: 'Peut-on traiter un cas de site vitrine ou petite entreprise ?',
+        description:
+          'Oui, si le sujet est mesurable: demandes de contact, formulaires, appels, sources de trafic, SEO local ou performance de pages cles.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Discuter de votre cas',
+        href: '/prendre-un-rdv',
+        icon: 'tabler:calendar',
+      },
+      {
+        text: 'Voir la methodologie',
+        href: '/methodologie',
+      },
+    ]}
+  >
+    <Fragment slot="title">Vous avez un écart que personne n’arrive à expliquer ?</Fragment>
+    <Fragment slot="subtitle">
+      En 30 minutes, nous clarifions le symptôme, les outils concernes et la prochaine action la plus utile.
+    </Fragment>
+  </CallToAction>
+</Layout>

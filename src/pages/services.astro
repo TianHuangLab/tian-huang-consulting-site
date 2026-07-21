@@ -1,0 +1,188 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Services',
+  description:
+    'Services de tracking, attribution, data quality et sites marketing mesurables pour équipes marketing, indépendants et TPE.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Services"
+    title="Des services pour rendre votre marketing mesurable."
+    subtitle="Mon cœur de métier est la fiabilisation de la mesure marketing: tracking, attribution, réconciliation des données et data quality. Pour les structures plus petites, je propose aussi une offre de sites et marketing mesurables."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Prendre un RDV',
+        href: '/prendre-un-rdv',
+        icon: 'tabler:calendar',
+      },
+      {
+        text: 'Voir la methodologie',
+        href: '/methodologie',
+      },
+    ]}
+  />
+
+  <Features
+    tagline="Pour équipes marketing"
+    title="Tracking, attribution et data quality."
+    subtitle="Pour les équipes e-commerce, SaaS ou acquisition qui ont besoin de comprendre pourquoi leurs chiffres ne correspondent pas."
+    columns={2}
+    items={[
+      {
+        title: 'Auditer les écarts',
+        description:
+          'Identifier les différences entre GA4, plateformes Ads, CRM et back-office, puis séparer les écarts normaux des erreurs de tracking.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Corriger les erreurs critiques',
+        description:
+          'Stabiliser les events, conversions, UTM, consentement, formulaires et purchases qui faussent les décisions marketing.',
+        icon: 'tabler:tools',
+      },
+      {
+        title: 'Aligner le revenu par canal',
+        description:
+          'Construire une lecture plus fiable du revenu, du ROAS, du MER, du CAC et de la performance canal.',
+        icon: 'tabler:chart-dots-3',
+      },
+      {
+        title: 'Documenter les KPIs',
+        description:
+          'Clarifier les définitions, sources de vérité, limites et usages de chaque chiffre pour faciliter les décisions.',
+        icon: 'tabler:clipboard-list',
+      },
+    ]}
+  />
+
+  <Features2
+    tagline="Offres principales"
+    title="Choisissez le bon niveau d’intervention."
+    columns={3}
+    items={[
+      {
+        title: 'Tracking Health Check',
+        description:
+          'Un audit court pour savoir ce qui est fiable, ce qui ne l’est pas, et quelles corrections prioriser.',
+        icon: 'tabler:stethoscope',
+        callToAction: {
+          text: 'Voir l’audit',
+          href: '/services/tracking-health-check',
+        },
+      },
+      {
+        title: 'Tracking Fix Sprint',
+        description:
+          'Un sprint de correction pour remettre d’aplomb les events, conversions, UTM, consentement et validations.',
+        icon: 'tabler:tool',
+        callToAction: {
+          text: 'Voir le sprint',
+          href: '/services/tracking-fix-sprint',
+        },
+      },
+      {
+        title: 'Revenue Attribution Dashboard',
+        description: 'Un dashboard pour aligner coûts, revenus, marges, ROAS, MER et qualité des données.',
+        icon: 'tabler:dashboard',
+        callToAction: {
+          text: 'Voir le dashboard',
+          href: '/services/revenue-attribution-dashboard',
+        },
+      },
+    ]}
+  />
+
+  <Content
+    tagline="Pour indépendants & TPE"
+    title="Sites et marketing mesurables."
+    items={[
+      {
+        title: 'Créer ou refondre un site clair',
+        description: 'Une présence digitale simple, lisible et orientée prise de contact.',
+        icon: 'tabler:layout',
+      },
+      {
+        title: 'Suivre les demandes de contact',
+        description: 'Les formulaires, clics, appels et actions importantes sont mesurables.',
+        icon: 'tabler:cursor-text',
+      },
+      {
+        title: 'Mesurer les actions marketing simples',
+        description: 'UTM, sources, pages et demandes sont suivis dans une logique comprehensible.',
+        icon: 'tabler:chart-bar',
+      },
+      {
+        title: 'Rendre les résultats lisibles',
+        description: 'Un dashboard simple pour voir ce qui génère vraiment des opportunites.',
+        icon: 'tabler:report',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Site et marketing mesurables pour petites entreprises',
+    }}
+  >
+    <Fragment slot="content">
+      <p>
+        Cette offre secondaire s’adresse aux indépendants, artisans et petites structures qui veulent un site et une
+        présence digitale plus simples à piloter. Le fil rouge reste le même: clarifier les objectifs, suivre les
+        conversions et rendre les résultats comprehensibles.
+      </p>
+    </Fragment>
+  </Content>
+
+  <FAQs
+    tagline="Choisir le bon service"
+    title="Quel service choisir ?"
+    items={[
+      {
+        title: 'Je ne sais pas si mon tracking est fiable.',
+        description:
+          'Commencez par le Tracking Health Check. Il permet de diagnostiquer les erreurs, mesurer leur impact et prioriser les corrections.',
+      },
+      {
+        title: 'Je connais déjà les problèmes et je veux les corriger.',
+        description:
+          'Le Tracking Fix Sprint est plus adapté. Il transforme les problèmes identifiés en corrections concrètes et documentées.',
+      },
+      {
+        title: 'Mes chiffres Ads, GA4, CRM et back-office ne matchent pas.',
+        description:
+          'Le Revenue Attribution Dashboard permet de poser les définitions, réconcilier les sources et créer une lecture décisionnelle.',
+      },
+      {
+        title: 'Je suis indépendant ou petite entreprise.',
+        description:
+          'L’offre Sites & marketing mesurables est plus adaptée: site clair, tracking de contact, SEO de base et dashboard simple.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Prendre un RDV',
+        href: '/prendre-un-rdv',
+        icon: 'tabler:calendar',
+      },
+    ]}
+  >
+    <Fragment slot="title">Vous voulez choisir la bonne intervention ?</Fragment>
+    <Fragment slot="subtitle">
+      En 30 minutes, nous clarifions votre situation, les chiffres qui posent problème et le service le plus adapté.
+    </Fragment>
+  </CallToAction>
+</Layout>

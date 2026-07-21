@@ -1,0 +1,69 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Cas type - Audit tracking e-commerce',
+  description:
+    'Cas type d’audit tracking e-commerce pour identifier les écarts entre GA4, GTM, plateformes Ads et back-office.',
+};
+
+const checkpoints = [
+  'Événements GA4 e-commerce',
+  'dataLayer et transaction_id',
+  'Purchase, valeur, devise et items',
+  'UTM, sources et parcours de paiement',
+  'Consentement et déclenchement des tags',
+];
+
+const deliverables = [
+  'Rapport d’audit priorisé',
+  'Captures de preuve',
+  'Table P0 / P1 / P2',
+  'Plan de correction',
+  'Session de restitution',
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="not-prose mx-auto max-w-5xl px-4 py-14 sm:px-6 md:py-20">
+    <p class="mb-4 text-sm font-bold uppercase tracking-wide text-primary">Cas type</p>
+    <h1 class="font-heading text-4xl font-bold tracking-tight text-gray-900 dark:text-white md:text-5xl">
+      Audit tracking e-commerce
+    </h1>
+    <p class="mt-6 max-w-3xl text-xl leading-relaxed text-muted dark:text-slate-400">
+      Le revenu GA4 ne correspond pas au back-office, les conversions Ads semblent trop optimistes et l’équipe ne sait
+      plus quels chiffres utiliser pour décider.
+    </p>
+
+    <div class="mt-12 grid gap-8 md:grid-cols-2">
+      <article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Objectif</h2>
+        <p class="mt-4 text-muted dark:text-slate-400">
+          Identifier les erreurs critiques, séparer les écarts normaux des bugs et prioriser les corrections qui ont le
+          plus d’impact business.
+        </p>
+      </article>
+      <article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Méthode</h2>
+        <ul class="mt-4 space-y-2 text-muted dark:text-slate-400">
+          {checkpoints.map((item) => <li>{item}</li>)}
+        </ul>
+      </article>
+    </div>
+
+    <section class="mt-10 rounded-lg border border-primary/20 bg-primary/5 p-6">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Livrables</h2>
+      <div class="mt-5 grid gap-3 sm:grid-cols-2">
+        {deliverables.map((item) => <p class="text-sm font-medium text-muted dark:text-slate-300">{item}</p>)}
+      </div>
+    </section>
+  </section>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Cadrer un audit', href: '/prendre-un-rdv', icon: 'tabler:calendar' }]}
+  >
+    <Fragment slot="title">Vous observez ce type d’écart ?</Fragment>
+    <Fragment slot="subtitle">Un diagnostic court permet de vérifier si un audit tracking est le bon format.</Fragment>
+  </CallToAction>
+</Layout>

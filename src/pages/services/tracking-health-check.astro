@@ -1,0 +1,195 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Audit Tracking GA4 & GTM pour e-commerce et SaaS',
+  description:
+    'Audit technique de votre tracking GA4, GTM, Ads, Consent Mode et dataLayer avec rapport priorisé, impacts business et plan de correction.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Tracking Health Check"
+    title="Audit Tracking GA4, GTM, Ads et Consent Mode."
+    subtitle="Un audit court et structuré pour comprendre pourquoi vos conversions, revenus ou leads ne correspondent pas entre vos outils. Vous obtenez une liste priorisée des erreurs, leur impact business et un plan de correction."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Auditer mon tracking',
+        href: '/prendre-un-rdv',
+        icon: 'tabler:calendar',
+      },
+      {
+        text: 'Voir la methodologie',
+        href: '/methodologie',
+      },
+    ]}
+  />
+
+  <Features
+    tagline="Symptomes"
+    title="Quand lancer un audit tracking ?"
+    columns={3}
+    items={[
+      {
+        title: 'Les chiffres ne matchent pas',
+        description: 'GA4, Meta Ads, Google Ads, CRM et back-office affichent des conversions ou revenus différents.',
+        icon: 'tabler:arrows-diff',
+      },
+      {
+        title: 'Le ROAS semble trop beau',
+        description:
+          'Les plateformes publicitaires annoncent une performance que les ventes ou la marge ne confirment pas.',
+        icon: 'tabler:chart-line',
+      },
+      {
+        title: 'Personne ne fait confiance au dashboard',
+        description: 'Les équipes debattent des chiffres au lieu de prendre des décisions marketing.',
+        icon: 'tabler:alert-circle',
+      },
+    ]}
+  />
+
+  <Features2
+    tagline="Périmètre"
+    title="Ce qui est audite."
+    columns={3}
+    items={[
+      {
+        title: 'Configuration GA4',
+        description: 'Events, conversions, paramètrès, ecommerce et trafic.',
+        icon: 'tabler:brand-google-analytics',
+      },
+      {
+        title: 'Structure GTM',
+        description: 'Tags, triggers, variables, preview, sequencing et hygiene du container.',
+        icon: 'tabler:tag',
+      },
+      {
+        title: 'Events e-commerce ou lead',
+        description: 'view_item, add_to_cart, begin_checkout, purchase, generate_lead.',
+        icon: 'tabler:shopping-cart',
+      },
+      {
+        title: 'DataLayer',
+        description: 'Payloads, types de données, items, value, currency et transaction_id.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Conversions Ads',
+        description: 'Google Ads, Meta Pixel, event_id et readiness CAPI.',
+        icon: 'tabler:target-arrow',
+      },
+      {
+        title: 'Consent Mode',
+        description: 'Default state, update, tag behavior et scénarios accepter/refuser.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'UTM & referrals',
+        description: 'UTM manquants, UTM écrasés, self-referrals et cross-domain.',
+        icon: 'tabler:link',
+      },
+      {
+        title: 'Revenue gaps',
+        description: 'Ecarts entre GA4, Ads, CRM et back-office.',
+        icon: 'tabler:database-dollar',
+      },
+      {
+        title: 'Priorisation',
+        description: 'Sévérité technique, impact business et ordre de correction.',
+        icon: 'tabler:list-check',
+      },
+    ]}
+  />
+
+  <Content
+    tagline="Livrables"
+    title="Un audit utile doit être actionnable."
+    items={[
+      {
+        title: 'Rapport d’audit',
+        description: 'Une synthèse claire des problèmes trouvés.',
+        icon: 'tabler:file-analytics',
+      },
+      {
+        title: 'Captures et preuves techniques',
+        description: 'DebugView, Tag Assistant, GTM Preview, Network ou exports.',
+        icon: 'tabler:photo-search',
+      },
+      {
+        title: 'Sévérité par problème',
+        description: 'Chaque erreur est qualifiée selon son risque réel.',
+        icon: 'tabler:alert-triangle',
+      },
+      {
+        title: 'Impact business',
+        description: 'Le lien entre erreur technique et décision marketing est explicite.',
+        icon: 'tabler:briefcase',
+      },
+      {
+        title: 'Roadmap de correction',
+        description: 'Les corrections sont priorisées et découpables.',
+        icon: 'tabler:route',
+      },
+      {
+        title: 'Restitution 60 minutes',
+        description: 'Une session pour expliquer les écarts et prochaines actions.',
+        icon: 'tabler:presentation',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Audit tracking et data quality',
+    }}
+  >
+    <Fragment slot="content">
+      <p>
+        Le but n’est pas de produire une longue liste technique. Le but est de montrer quelles erreurs faussent les
+        décisions, lesquelles sont tolérables, et quoi corriger en premier.
+      </p>
+    </Fragment>
+  </Content>
+
+  <FAQs
+    tagline="FAQ"
+    title="Questions fréquentes"
+    items={[
+      {
+        title: 'Combien de temps dure un audit ?',
+        description:
+          'Le format dépend du périmètre, mais un Health Check est conçu pour être court, priorisé et orienté décisions.',
+      },
+      {
+        title: 'Est-ce que vous corrigez directement les erreurs ?',
+        description:
+          'Cette offre est un audit. Les corrections peuvent ensuite être traitees dans un Tracking Fix Sprint.',
+      },
+      {
+        title: 'De quels accès avez-vous besoin ?',
+        description:
+          'Idéalement: GA4, GTM, plateformes Ads, CMS, CMP, CRM ou back-office, plus une description des écarts observes.',
+      },
+      {
+        title: 'Est-ce un audit RGPD ?',
+        description:
+          'Non. Il s’agit d’un audit technique du consentement et des tags. La validation juridique doit rester séparée.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Auditer mon tracking', href: '/prendre-un-rdv', icon: 'tabler:calendar' }]}
+  >
+    <Fragment slot="title">Vous voulez savoir ce qui fausse vos chiffres ?</Fragment>
+    <Fragment slot="subtitle"> Commencons par identifier les erreurs critiques et leur impact business. </Fragment>
+  </CallToAction>
+</Layout>

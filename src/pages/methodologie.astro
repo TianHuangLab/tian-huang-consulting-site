@@ -1,0 +1,269 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Methodologie Tracking & Attribution',
+  description:
+    'Une méthode concrète pour auditer votre tracking, corriger les erreurs critiques et expliquer les écarts entre GA4, Ads, CRM et revenu réel.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Methodologie"
+    title="Une méthode simple pour arreter de débattre des chiffres."
+    subtitle="Quand GA4, Meta, Google Ads, le CRM et le back-office ne racontent pas la même histoire, le sujet n’est pas de choisir un outil au hasard. Le sujet est de comprendre la chaîne de mesure, corriger ce qui est faux et définir les chiffres qui servent vraiment à décider."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Prendre un RDV',
+        href: '/prendre-un-rdv',
+        icon: 'tabler:calendar',
+      },
+      {
+        text: 'Voir les services',
+        href: '/services',
+      },
+    ]}
+  />
+
+  <Note
+    title="Principe :"
+    description="Je ne cherche pas à rendre tous les chiffres identiques. Je cherche à rendre les écarts explicables, les erreurs visibles et les décisions plus fiables."
+  />
+
+  <Features
+    tagline="Point de depart"
+    title="La plupart des problèmes tracking commencent par une question simple."
+    subtitle="Pourquoi les chiffres ne correspondent pas ?"
+    columns={3}
+    items={[
+      {
+        title: 'Les outils ne mesurent pas la même chose',
+        description:
+          'Une plateforme Ads attribue une conversion. GA4 observé un comportement site. Le CRM suit un lead. Le back-office porte la commande. Ces chiffres peuvent tous être utiles, mais pas pour la même décision.',
+        icon: 'tabler:arrows-split',
+      },
+      {
+        title: 'Les erreurs techniques changent les décisions',
+        description:
+          'Un purchase dupliqué, un transaction_id manquant, un consent mal initialisé ou une UTM écrasée peuvent donner l’impression qu’un canal performe mieux ou moins bien qu’en réalité.',
+        icon: 'tabler:alert-triangle',
+      },
+      {
+        title: 'La direction a besoin d’une lecture claire',
+        description:
+          'Les équipes n’ont pas besoin d’un dashboard de plus. Elles ont besoin de savoir quels chiffres sont fiables, quels chiffres sont limités et quoi faire ensuite.',
+        icon: 'tabler:presentation-analytics',
+      },
+    ]}
+  />
+
+  <Steps
+    tagline="Process"
+    title="Diagnostiquer, cartographier, corriger, réconcilier, expliquer."
+    subtitle="Chaque mission suit une logique courte et documentée. L’objectif est de produire des corrections et des décisions, pas un rapport que personne ne relit."
+    items={[
+      {
+        title: '1. Diagnose',
+        description:
+          'Je pars des symptomes: revenus qui ne matchent pas, conversions douteuses, leads sans source, ROAS incoherent, dashboard peu fiable. Ensuite je vérifie GA4, GTM, Ads, CMP, CRM et back-office pour localiser les ruptures.',
+        icon: 'tabler:search',
+      },
+      {
+        title: '2. Map',
+        description:
+          'Je transforme les objectifs business en measurement plan: événements, paramètrès, sources, KPIs, définitions et méthodes de validation. Tout le monde doit comprendre ce qui est mesure et pourquoi.',
+        icon: 'tabler:map',
+      },
+      {
+        title: '3. Fix',
+        description:
+          'Je corrige ou spécifie les corrections prioritaires: events manquants, purchases dupliqués, UTM instables, Consent Mode mal ordonné, conversions Ads incorrectes ou payload dataLayer incomplet.',
+        icon: 'tabler:tool',
+      },
+      {
+        title: '4. Reconcile',
+        description:
+          'Je compare les chiffres Ads, GA4, CRM et back-office. On sépare les écarts normaux des anomalies, puis on définit quelle source utiliser pour optimiser, reporter ou arbitrer le budget.',
+        icon: 'tabler:arrows-exchange',
+      },
+      {
+        title: '5. Explain',
+        description:
+          'Je documente les résultats simplement: ce qui était faux, ce qui a été corrigé, ce qui reste limité, et quelles décisions peuvent être prises avec plus de confiance.',
+        icon: 'tabler:message-report',
+      },
+    ]}
+  />
+
+  <Content
+    tagline="Livrables"
+    title="Ce que vous obtenez concretement."
+    items={[
+      {
+        title: 'Carte des problèmes',
+        description: 'Les erreurs sont listees avec preuves, sévérité et impact business.',
+        icon: 'tabler:map-search',
+      },
+      {
+        title: 'Measurement plan',
+        description: 'Les events, paramètrès, KPIs et validations sont formalises.',
+        icon: 'tabler:clipboard-list',
+      },
+      {
+        title: 'Roadmap de correction',
+        description: 'Les actions sont priorisées selon leur impact, pas selon leur complexite apparente.',
+        icon: 'tabler:route',
+      },
+      {
+        title: 'Règles source of truth',
+        description: 'Chaque chiffre a un rôle: optimisation, analyse, finance ou pilotage direction.',
+        icon: 'tabler:database-cog',
+      },
+      {
+        title: 'Documentation de validation',
+        description: 'Les tests montrent comment vérifier que le tracking fonctionne.',
+        icon: 'tabler:checks',
+      },
+      {
+        title: 'Lecture business',
+        description: 'Les résultats sont expliques dans un langage utile pour marketing, data et direction.',
+        icon: 'tabler:briefcase',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Session de travail autour de données marketing',
+    }}
+  >
+    <Fragment slot="content">
+      <p>
+        Une bonne mission tracking ne se termine pas par une liste de tags. Elle se termine par une chaîne de mesure
+        plus claire, des erreurs corrigées, des limites documentées et des décisions plus faciles à prendre.
+      </p>
+    </Fragment>
+  </Content>
+
+  <Features2
+    tagline="Ce que je refuse de promettre"
+    title="Une méthode sérieuse commence aussi par des limites claires."
+    subtitle="La confiance vient autant de ce que l’on corrige que de ce que l’on ne prétend pas pouvoir garantir."
+    columns={3}
+    items={[
+      {
+        title: 'Pas de chiffres magiques',
+        description:
+          'Je ne promets pas de faire correspondre parfaitement Meta, GA4, le CRM et le back-office. Certains écarts sont normaux.',
+        icon: 'tabler:wand-off',
+      },
+      {
+        title: 'Pas de conformité juridique garantie',
+        description:
+          'Je peux auditer la configuration technique du consentement, mais la validation RGPD doit rester juridique.',
+        icon: 'tabler:scale',
+      },
+      {
+        title: 'Pas de dashboard decoratif',
+        description:
+          'Un dashboard doit montrer la performance, mais aussi la qualité des données qui soutiennent cette performance.',
+        icon: 'tabler:dashboard-off',
+      },
+    ]}
+  />
+
+  <Content
+    tagline="Pourquoi cette approche fonctionne"
+    title="Parce qu’elle relie technique, marketing et revenu."
+    isReversed
+    items={[
+      {
+        title: 'Pour les équipes marketing',
+        description: 'Moins de doutes sur les conversions, plus de clarte sur les canaux et les campagnes.',
+        icon: 'tabler:speakerphone',
+      },
+      {
+        title: 'Pour les équipes data',
+        description: 'Des définitions, sources, limites et validations plus faciles à maintenir.',
+        icon: 'tabler:database',
+      },
+      {
+        title: 'Pour la direction',
+        description: 'Une lecture plus fiable du revenu, du CAC, du ROAS, du MER et des arbitrages budgetaires.',
+        icon: 'tabler:chart-dots-3',
+      },
+      {
+        title: 'Pour les petites structures',
+        description: 'Un site ou une action marketing n’est pas seulement visible: elle devient mesurable.',
+        icon: 'tabler:building-store',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Equipe analysant des résultats marketing',
+    }}
+  >
+    <Fragment slot="content">
+      <p>
+        Le tracking n’est pas un sujet reserve aux techniciens. C’est le lien entre ce que vous depensez, ce que vos
+        utilisateurs font, ce que vos commerciaux enregistrent et ce que votre entreprise encaisse vraiment.
+      </p>
+    </Fragment>
+  </Content>
+
+  <FAQs
+    tagline="FAQ"
+    title="Questions fréquentes sur la méthode"
+    items={[
+      {
+        title: 'Est-ce que cette méthode s’applique à tous les projets ?',
+        description:
+          'Oui, mais le niveau de profondeur change. Un e-commerce avec Ads, CRM et back-office demande plus de réconciliation qu’un site vitrine mesurable pour une TPE.',
+      },
+      {
+        title: 'Commence-t-on toujours par un audit ?',
+        description:
+          'C’est souvent le meilleur point de depart. Si les problèmes sont déjà clairement identifiés, on peut démarrer directement par un sprint de correction.',
+      },
+      {
+        title: 'Quels accès sont necessaires ?',
+        description:
+          'Selon le périmètre: GA4, GTM, plateformes Ads, CMP, CMS, CRM, back-office, ou exports de données. On clarifie cela avant de commencer.',
+      },
+      {
+        title: 'Comment éviter que le tracking se degrade après la mission ?',
+        description:
+          'La documentation, les tests de validation et les règles de nommage sont essentiels. Le but est que votre équipe puisse maintenir la chaîne de mesure.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Prendre un RDV',
+        href: '/prendre-un-rdv',
+        icon: 'tabler:calendar',
+      },
+      {
+        text: 'Voir les services',
+        href: '/services',
+      },
+    ]}
+  >
+    <Fragment slot="title">On commence par clarifier vos chiffres ?</Fragment>
+    <Fragment slot="subtitle">
+      En 30 minutes, nous identifions les principaux écarts, les sources à vérifier et la meilleure prochaine action.
+    </Fragment>
+  </CallToAction>
+</Layout>

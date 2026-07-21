@@ -1,0 +1,168 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Tracking Fix Sprint GA4, GTM, Consent Mode et Ads',
+  description:
+    'Sprint de correction tracking pour GA4, GTM, Google Ads, Meta Pixel, Consent Mode et dataLayer avec validation et documentation.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Tracking Fix Sprint"
+    title="Corriger les erreurs tracking qui faussent vos décisions."
+    subtitle="Le Fix Sprint transforme l’audit en corrections concrètes. L’objectif est de stabiliser les événements, conversions et signaux critiques pour que vos équipes puissent de nouveau utiliser les chiffres avec confiance."
+    actions={[
+      { variant: 'primary', text: 'Corriger mon tracking', href: '/prendre-un-rdv', icon: 'tabler:calendar' },
+      { text: 'Commencer par un audit', href: '/services/tracking-health-check' },
+    ]}
+  />
+
+  <Features
+    tagline="Quand choisir ce sprint"
+    title="Pour passer du diagnostic à la correction."
+    columns={3}
+    items={[
+      {
+        title: 'Les erreurs sont connues',
+        description: 'Un audit ou une analyse interne a déjà identifié les problèmes prioritaires.',
+        icon: 'tabler:list-details',
+      },
+      {
+        title: 'Les conversions sont instables',
+        description: 'Les formulaires, achats, leads ou conversions Ads ne remontent pas de façon fiable.',
+        icon: 'tabler:activity-heartbeat',
+      },
+      {
+        title: 'Les équipes ont besoin d’un handover',
+        description: 'Les corrections doivent être documentées pour marketing, data ou développement.',
+        icon: 'tabler:book',
+      },
+    ]}
+  />
+
+  <Features2
+    tagline="Corrections possibles"
+    title="Ce qui peut être corrigé."
+    columns={3}
+    items={[
+      { title: 'Events GA4', description: 'Events manquants, mal nommés ou mal paramètrès.', icon: 'tabler:activity' },
+      {
+        title: 'Purchase',
+        description: 'Purchase dupliqué, incomplet ou sans transaction_id.',
+        icon: 'tabler:receipt',
+      },
+      {
+        title: 'Formulaires',
+        description: 'Lead forms, demo requests, contact clicks et confirmation events.',
+        icon: 'tabler:forms',
+      },
+      { title: 'UTM', description: 'Capture, persistance et prevention des ecrasements.', icon: 'tabler:link' },
+      {
+        title: 'Google Ads',
+        description: 'Conversions, enhanced conversions readiness et validation.',
+        icon: 'tabler:target-arrow',
+      },
+      {
+        title: 'Meta Pixel / CAPI',
+        description: 'Event_id, déduplication et coherence browser/server.',
+        icon: 'tabler:api',
+      },
+      {
+        title: 'Consent Mode',
+        description: 'Default state, update state et ordre de declenchement.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Cross-domain',
+        description: 'Paiement externe, sous-domaines, self-referrals et session continuity.',
+        icon: 'tabler:world',
+      },
+      {
+        title: 'QA',
+        description: 'Validation DebugView, Tag Assistant, GTM Preview et Network.',
+        icon: 'tabler:checkup-list',
+      },
+    ]}
+  />
+
+  <Content
+    tagline="Process"
+    title="Un sprint court, documenté et vérifiable."
+    items={[
+      {
+        title: '1. Scope',
+        description: 'On limité le sprint aux erreurs qui ont un vrai impact business.',
+        icon: 'tabler:focus',
+      },
+      {
+        title: '2. Implement',
+        description: 'Les corrections sont faites dans GTM, GA4, Ads ou la couche dataLayer selon le cas.',
+        icon: 'tabler:code',
+      },
+      {
+        title: '3. Validate',
+        description: 'Chaque correction est testee avec les outils de debug adaptes.',
+        icon: 'tabler:checks',
+      },
+      {
+        title: '4. Document',
+        description: 'Les changements, limites et tests sont documentés pour l’équipe.',
+        icon: 'tabler:file-description',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Tracking implementation sprint',
+    }}
+  >
+    <Fragment slot="content">
+      <p>
+        Le sprint ne doit pas devenir une refonte totale. Il sert à remettre d’aplomb les signaux critiques qui
+        influencent les décisions budgetaires, les conversions et les dashboards.
+      </p>
+    </Fragment>
+  </Content>
+
+  <FAQs
+    tagline="FAQ"
+    title="Questions fréquentes"
+    items={[
+      {
+        title: 'Faut-il faire un audit avant ?',
+        description:
+          'C’est recommande. Si les problèmes sont déjà clairement identifiés, le sprint peut démarrer directement.',
+      },
+      {
+        title: 'Est-ce que vous intervenez dans le code du site ?',
+        description:
+          'Si nécessaire, je peux spécifier les changements à faire côté développement. Le périmètre exact dépend des accès et de la stack.',
+      },
+      {
+        title: 'Est-ce que tout sera corrigé en une fois ?',
+        description:
+          'Non, le sprint priorisé les corrections les plus importantes. Les sujets plus lourds peuvent être decoupes en plusieurs phases.',
+      },
+      {
+        title: 'Comment sait-on que c’est corrigé ?',
+        description:
+          'Chaque correction doit avoir une méthode de validation: DebugView, Tag Assistant, GTM Preview, Network ou rapprochement avec les données métier.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Corriger mon tracking', href: '/prendre-un-rdv', icon: 'tabler:calendar' }]}
+  >
+    <Fragment slot="title">Vous avez déjà identifié des erreurs tracking ?</Fragment>
+    <Fragment slot="subtitle">Transformons-les en corrections testées, documentées et utilisables.</Fragment>
+  </CallToAction>
+</Layout>

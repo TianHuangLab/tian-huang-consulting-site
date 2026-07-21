@@ -1,0 +1,280 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Diagnostic Tracking 30 min',
+  description:
+    'Réservez un diagnostic tracking de 30 minutes pour identifier les écarts entre GA4, Ads, CRM et revenu réel, puis prioriser les corrections.',
+};
+
+const CAL_LINK = 'tian-huang/diagnostic-tracking-30min';
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Diagnostic 30 min"
+    title="Identifions ce qui fausse vos chiffres marketing."
+    subtitle="Un premier échange court pour comprendre vos écarts entre GA4, plateformes Ads, CRM et revenu réel, puis définir la prochaine action la plus utile."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Voir les disponibilites',
+        href: '#cal-booking',
+        icon: 'tabler:calendar',
+      },
+      {
+        text: 'Voir la methodologie',
+        href: '/methodologie',
+      },
+    ]}
+  />
+
+  <Note
+    title="Promesse :"
+    description="En 30 minutes, vous repartez avec une lecture plus claire du problème et une prochaine action priorisée."
+  />
+
+  <Features
+    tagline="Pour qui"
+    title="Ce rendez-vous est utile si vos chiffres bloquent vos décisions."
+    subtitle="Il ne s’agit pas d’un audit complet gratuit, mais d’un cadrage pour comprendre le problème, vérifier le périmètre et choisir la bonne suite."
+    columns={3}
+    items={[
+      {
+        title: 'Equipes e-commerce & SaaS',
+        description:
+          'Vos chiffres GA4, Ads, CRM ou back-office ne correspondent pas, et cela complique vos arbitrages budgetaires.',
+        icon: 'tabler:building-store',
+      },
+      {
+        title: 'Agences & freelances',
+        description:
+          'Vous gérez l’acquisition, le site ou le reporting, mais vous avez besoin d’un regard spécialisé sur le tracking.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Independants & TPE',
+        description:
+          'Vous voulez un site ou des actions marketing plus simples à suivre, avec des demandes de contact mesurables.',
+        icon: 'tabler:user-check',
+      },
+    ]}
+  />
+
+  <Content
+    tagline="Ce que l’appel clarifie"
+    title="On commence par poser les bonnes questions."
+    items={[
+      {
+        title: 'Quels chiffres ne correspondent pas ?',
+        description: 'GA4, Meta Ads, Google Ads, CRM, Shopify, HubSpot, back-office ou dashboard interne.',
+        icon: 'tabler:arrows-diff',
+      },
+      {
+        title: 'Quelle décision dépend de ces chiffres ?',
+        description: 'Budget, canal, campagne, refonte site, reporting direction ou correction technique.',
+        icon: 'tabler:target',
+      },
+      {
+        title: 'Quels outils sont en place ?',
+        description: 'GA4, GTM, Consent Mode, Meta Pixel/CAPI, CRM, CMS, Ads, BigQuery ou Looker Studio.',
+        icon: 'tabler:tool',
+      },
+      {
+        title: 'Quelle prochaine action est la plus utile ?',
+        description: 'Audit, fix sprint, dashboard, measurement plan ou cadrage d’un site mesurable.',
+        icon: 'tabler:route',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Discussion autour de données marketing',
+    }}
+  >
+    <Fragment slot="content">
+      <p>
+        Le but n’est pas de tout résoudre pendant l’appel. Le but est de comprendre assez précisément la situation pour
+        éviter les mauvaises priorités: corriger un tag secondaire quand le vrai problème vient du revenu, refaire un
+        dashboard alors que la collecte est instable, ou optimiser un canal sur un ROAS incomplet.
+      </p>
+    </Fragment>
+  </Content>
+
+  <section id="cal-booking" class="not-prose bg-gray-50 py-14 dark:bg-slate-900 md:py-20">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="mx-auto mb-8 max-w-3xl text-center">
+        <p class="mb-3 text-sm font-bold uppercase tracking-wide text-primary">Reservation</p>
+        <h2 class="font-heading text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
+          Choisissez un creneau de 30 minutes.
+        </h2>
+        <p class="mt-4 text-lg text-muted dark:text-slate-400">
+          Sélectionnez un horaire qui vous convient. L’objectif est simple: comprendre votre écart de données, vérifier
+          si je peux vous aider et définir la prochaine etape utile.
+        </p>
+      </div>
+
+      <div
+        class="mx-auto h-[760px] max-w-[1040px] overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-950 sm:h-[680px] lg:h-[560px]"
+      >
+        <div id="my-cal-inline" class="h-full w-full"></div>
+      </div>
+    </div>
+  </section>
+
+  <FAQs
+    tagline="FAQ"
+    title="Avant de réserver"
+    items={[
+      {
+        title: 'Est-ce un audit gratuit ?',
+        description:
+          'Non. C’est un appel de cadrage pour comprendre votre problème, vérifier si je peux aider et identifier la prochaine action utile. Un audit complet demande des accès, des tests et une analyse documentée.',
+        icon: 'tabler:help-circle',
+      },
+      {
+        title: 'Que faut-il preparer ?',
+        description:
+          'Un exemple concret suffit: une campagne, une commande, un dashboard ou un écart observé entre GA4, Ads, CRM ou back-office.',
+        icon: 'tabler:clipboard-list',
+      },
+      {
+        title: 'Puis-je venir avec un sujet petite entreprise ?',
+        description:
+          'Oui. Si le besoin concerne un site, des formulaires, du SEO local ou des demandes de contact mesurables, nous cadrerons plutôt l’offre Sites & marketing mesurables.',
+        icon: 'tabler:building-store',
+      },
+      {
+        title: 'Que se passe-t-il après l’appel ?',
+        description:
+          'Vous repartez avec une lecture plus nette du problème. Si le sujet est pertinent, je vous propose une suite adaptée: audit, sprint, dashboard ou cadrage.',
+        icon: 'tabler:arrow-right',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Retour aux services',
+        href: '/services',
+        icon: 'tabler:arrow-left',
+      },
+    ]}
+  >
+    <Fragment slot="title">Pas encore prêt à réserver ?</Fragment>
+    <Fragment slot="subtitle">
+      Vous pouvez d’abord parcourir les services pour identifier le format le plus proche de votre besoin.
+    </Fragment>
+  </CallToAction>
+
+  <script is:inline data-astro-rerun define:vars={{ CAL_LINK }}>
+    /* eslint-disable prefer-const, prefer-rest-params */
+    (function () {
+      const CAL_NAMESPACE = 'diagnostic';
+      const CAL_ORIGIN = 'https://app.cal.com';
+      const CAL_SCRIPT_SRC = 'https://app.cal.com/embed/embed.js';
+
+      function ensureCal(C, A, L) {
+        let p = function (a, ar) {
+          a.q.push(ar);
+        };
+        let d = C.document;
+        C.Cal =
+          C.Cal ||
+          function () {
+            let cal = C.Cal;
+            let ar = arguments;
+            if (!cal.loaded) {
+              cal.ns = {};
+              cal.q = cal.q || [];
+              d.head.appendChild(d.createElement('script')).src = A;
+              cal.loaded = true;
+            }
+            if (ar[0] === L) {
+              const api = function () {
+                p(api, arguments);
+              };
+              const namespace = ar[1];
+              api.q = api.q || [];
+              if (typeof namespace === 'string') {
+                cal.ns[namespace] = cal.ns[namespace] || api;
+                p(cal.ns[namespace], ar);
+                p(cal, ['initNamespace', namespace]);
+              } else {
+                p(cal, ar);
+              }
+              return;
+            }
+            p(cal, ar);
+          };
+      }
+
+      function mountCalEmbed() {
+        const target = document.querySelector('#my-cal-inline');
+
+        if (!target) {
+          return;
+        }
+
+        target.innerHTML = '';
+        ensureCal(window, CAL_SCRIPT_SRC, 'init');
+
+        Cal('init', CAL_NAMESPACE, { origin: CAL_ORIGIN });
+
+        Cal.ns[CAL_NAMESPACE]('inline', {
+          elementOrSelector: '#my-cal-inline',
+          calLink: CAL_LINK,
+          config: {
+            layout: 'month_view',
+          },
+        });
+
+        Cal.ns[CAL_NAMESPACE]('ui', {
+          hideEventTypeDetails: false,
+          styles: {
+            body: {
+              background: 'transparent',
+            },
+          },
+        });
+      }
+
+      if (window.__diagnosticCalPageLoadListener) {
+        document.removeEventListener('astro:page-load', window.__diagnosticCalPageLoadListener);
+      }
+
+      window.__diagnosticCalPageLoadListener = mountCalEmbed;
+      document.addEventListener('astro:page-load', window.__diagnosticCalPageLoadListener);
+      mountCalEmbed();
+    })();
+  </script>
+
+  <style is:inline>
+    #my-cal-inline iframe {
+      width: 100% !important;
+      height: 760px !important;
+      border: 0;
+      display: block;
+    }
+
+    @média (min-width: 640px) {
+      #my-cal-inline iframe {
+        height: 680px !important;
+      }
+    }
+
+    @média (min-width: 768px) {
+      #my-cal-inline iframe {
+        height: 560px !important;
+      }
+    }
+  </style>
+</Layout>

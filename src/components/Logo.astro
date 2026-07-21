@@ -1,0 +1,20 @@
+---
+import { SITE } from 'astrowind:config';
+import avatar from '~/assets/favicons/profile-tian.png';
+---
+
+<div class="flex shrink-0 items-center gap-2.5 pr-10">
+  <img
+    src={avatar.src}
+    alt={SITE?.name}
+    width="32"
+    height="32"
+    class="h-8 w-8 shrink-0 rounded-full border border-gray-200 object-cover shadow-sm dark:border-gray-700"
+    loading="eager"
+    decoding="async"
+  />
+
+  <span class="truncate whitespace-nowrap text-base font-semibold tracking-tight text-gray-900 dark:text-white">
+    {SITE?.name}
+  </span>
+</div>

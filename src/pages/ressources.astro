@@ -1,0 +1,151 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import BlogList from '~/components/blog/List.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import { findLatestPosts } from '~/utils/blog';
+
+const metadata = {
+  title: 'Ressources Tracking & Attribution',
+  description:
+    'Guides, checklists et analyses pour fiabiliser votre tracking, comprendre les écarts entre GA4, Ads, CRM et revenu réel, et mieux piloter vos décisions marketing.',
+};
+
+const posts = await findLatestPosts({ count: 5 });
+---
+
+<Layout metadata={metadata}>
+  <section class="not-prose mx-auto max-w-6xl px-4 py-12 sm:px-6 md:py-16 lg:py-20">
+    <div class="mx-auto max-w-3xl text-center">
+      <p class="mb-4 text-sm font-bold uppercase tracking-wide text-primary">Ressources</p>
+      <h1 class="font-heading text-4xl font-bold tracking-tight text-gray-900 dark:text-white md:text-5xl">
+        Guides tracking, attribution et data quality.
+      </h1>
+      <p class="mt-6 text-xl text-muted dark:text-slate-400">
+        Des notes pratiques pour comprendre les écarts entre GA4, Ads, CRM et revenu réel, puis transformer un doute
+        data en décision marketing plus claire.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px] lg:items-start">
+      <main>
+        <div class="mb-8 border-b border-gray-200 pb-6 dark:border-slate-700">
+          <p class="mb-2 text-sm font-semibold uppercase tracking-wide text-primary">Articles recents</p>
+          <h2 class="font-heading text-2xl font-bold tracking-tight text-gray-900 dark:text-white md:text-3xl">
+            Premiers contenus de la bibliotheque.
+          </h2>
+          <p class="mt-3 text-muted dark:text-slate-400">
+            Ces premiers articles servent de base éditoriale pour documenter les problèmes fréquents de tracking,
+            d’attribution, de consentement et de reporting marketing.
+          </p>
+        </div>
+
+        <BlogList posts={posts} />
+      </main>
+
+      <aside class="space-y-6 lg:sticky lg:top-28">
+        <section
+          class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900"
+        >
+          <p class="text-sm font-semibold uppercase tracking-wide text-primary">Themes</p>
+          <ul class="mt-4 space-y-3 text-sm text-muted dark:text-slate-400">
+            <li>
+              <a
+                class="font-medium text-gray-900 hover:text-primary dark:text-white"
+                href="/cas/audit-tracking-ecommerce"
+              >
+                Tracking GA4 & GTM
+              </a>
+              <p>Events, dataLayer, ecommerce et validation technique.</p>
+            </li>
+            <li>
+              <a
+                class="font-medium text-gray-900 hover:text-primary dark:text-white"
+                href="/cas/revenue-reconciliation-meta-ga4-backoffice"
+              >
+                Attribution & revenu
+              </a>
+              <p>ROAS, MER, revenu net et sources de vérité.</p>
+            </li>
+            <li>
+              <a
+                class="font-medium text-gray-900 hover:text-primary dark:text-white"
+                href="/cas/consent-mode-validation"
+              >
+                Consentement & qualité
+              </a>
+              <p>Consent Mode, CMP, Google tags et preuves de test.</p>
+            </li>
+            <li>
+              <a
+                class="font-medium text-gray-900 hover:text-primary dark:text-white"
+                href="/cas/dashboard-data-quality"
+              >
+                Dashboards decisionnels
+              </a>
+              <p>KPI dictionary, data freshness et reporting utile.</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="rounded-lg border border-gray-200 bg-gray-50 p-6 dark:border-slate-700 dark:bg-slate-800">
+          <p class="text-sm font-semibold uppercase tracking-wide text-primary">Ligne editoriale</p>
+          <p class="mt-3 text-sm text-muted dark:text-slate-400">
+            Chaque futur article partira d’un symptôme business, montrera quoi vérifier, puis proposera un livrable
+            reutilisable: checklist, matrice de test, table de réconciliation ou modèle de dashboard.
+          </p>
+        </section>
+
+        <section class="rounded-lg border border-primary/20 bg-primary/5 p-6 dark:border-primary/30">
+          <p class="text-sm font-semibold text-gray-900 dark:text-white">Un problème similaire ?</p>
+          <p class="mt-2 text-sm text-muted dark:text-slate-400">
+            En 30 minutes, nous pouvons cadrer votre symptôme tracking et identifier la prochaine action utile.
+          </p>
+          <a href="/prendre-un-rdv" class="mt-4 inline-flex text-sm font-semibold text-primary hover:underline">
+            Prendre un RDV
+          </a>
+        </section>
+      </aside>
+    </div>
+  </section>
+
+  <section class="not-prose border-y border-gray-200 bg-gray-50 py-12 dark:border-slate-700 dark:bg-slate-900">
+    <div class="mx-auto grid max-w-6xl gap-6 px-4 sm:px-6 md:grid-cols-3">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-wide text-primary">À venir</p>
+        <h2 class="mt-2 font-heading text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          Les prochains articles à écrire.
+        </h2>
+      </div>
+      <div class="text-sm text-muted dark:text-slate-400">
+        <p class="font-semibold text-gray-900 dark:text-white">Audit ecommerce</p>
+        <p class="mt-2">Pourquoi GA4, Ads et back-office ne donnent pas le même revenu.</p>
+      </div>
+      <div class="text-sm text-muted dark:text-slate-400">
+        <p class="font-semibold text-gray-900 dark:text-white">Consent Mode</p>
+        <p class="mt-2">Comment tester accept, reject et partial consent sans rester dans le flou.</p>
+      </div>
+    </div>
+  </section>
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Discuter de votre problème',
+        href: '/prendre-un-rdv',
+        icon: 'tabler:calendar',
+      },
+      {
+        text: 'Voir les cas',
+        href: '/cas',
+      },
+    ]}
+  >
+    <Fragment slot="title">Un article ressemble à votre situation ?</Fragment>
+    <Fragment slot="subtitle">
+      Nous pouvons transformer ce symptôme en diagnostic concret et en prochaine action priorisée.
+    </Fragment>
+  </CallToAction>
+</Layout>

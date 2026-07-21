@@ -1,0 +1,151 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Sites & marketing mesurables pour indépendants et TPE',
+  description:
+    'Création ou refonte de site, tracking de leads, SEO de base et dashboard simple pour petites entreprises qui veulent un marketing mesurable.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Offre secondaire | Independants & TPE"
+    title="Sites & marketing mesurables pour indépendants et TPE."
+    subtitle="Une offre secondaire pour les petites structures qui veulent une présence digitale claire, simple à comprendre et mesurable dès le départ. Le but n’est pas seulement d’avoir un site, mais de savoir quelles actions génèrent des demandes."
+    actions={[
+      { variant: 'primary', text: 'Parler de mon projet', href: '/prendre-un-rdv', icon: 'tabler:calendar' },
+      { text: 'Voir les services principaux', href: '/services' },
+    ]}
+  />
+
+  <Features
+    tagline="Pour qui"
+    title="Une offre pour les structurés qui veulent rester simples."
+    columns={3}
+    items={[
+      {
+        title: 'Independants',
+        description: 'Consultants, freelances et prestataires qui veulent un site clair et orienté demande de contact.',
+        icon: 'tabler:user',
+      },
+      {
+        title: 'Artisans & activités locales',
+        description: 'Petites activités qui ont besoin de visibilité locale et de demandes qualifiées.',
+        icon: 'tabler:building-store',
+      },
+      {
+        title: 'TPE',
+        description: 'Petites entreprises qui veulent comprendre quelles actions marketing apportent des opportunites.',
+        icon: 'tabler:briefcase',
+      },
+    ]}
+  />
+
+  <Features2
+    tagline="Offres possibles"
+    title="Trois formats simples."
+    columns={3}
+    items={[
+      {
+        title: 'Site vitrine mesurable',
+        description: 'Un site clair, structuré, orienté contact, avec une base de tracking propre dès le départ.',
+        icon: 'tabler:layout',
+      },
+      {
+        title: 'Refonte site + tracking propre',
+        description:
+          'Améliorer un site existant tout en corrigeant les formulaires, clics, conversions et sources de trafic.',
+        icon: 'tabler:refresh',
+      },
+      {
+        title: 'Marketing local mesurable',
+        description:
+          'Structurer la visibilité locale, les pages importantes, les demandes de contact et un dashboard simple.',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+
+  <Content
+    tagline="Difference"
+    title="Ce qui rend cette offre differente."
+    items={[
+      {
+        title: 'Les objectifs avant les pages',
+        description: 'On définit ce que le site doit produire: demandes, appels, rendez-vous, devis ou leads.',
+        icon: 'tabler:target',
+      },
+      {
+        title: 'Les conversions dès le départ',
+        description: 'Les actions importantes sont suivies au lieu d être ajoutées après coup.',
+        icon: 'tabler:cursor-text',
+      },
+      {
+        title: 'Un tracking simple mais propre',
+        description: 'GA4, GTM, formulaires, clics et UTM sont structurés selon le besoin réel.',
+        icon: 'tabler:tag',
+      },
+      {
+        title: 'Un dashboard comprehensible',
+        description:
+          'Le reporting reste lisible pour une personne qui ne travaille pas toute la journée dans les outils marketing.',
+        icon: 'tabler:chart-bar',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Presence digitale mesurable',
+    }}
+  >
+    <Fragment slot="content">
+      <p>
+        Cette offre reste volontairement secondaire sur mon site. Mon cœur de métier reste le tracking et l’attribution.
+        Ici, j’applique la même logique à des projets plus simples: rendre les actions visibles, mesurables et
+        comprehensibles.
+      </p>
+    </Fragment>
+  </Content>
+
+  <FAQs
+    tagline="FAQ"
+    title="Questions fréquentes"
+    items={[
+      {
+        title: 'Est-ce votre activité principale ?',
+        description:
+          'Non. Mon activité principale reste Tracking & Attribution. Cette offre est une extension pour petites structures qui veulent une présence digitale mesurable.',
+      },
+      {
+        title: 'Est-ce que vous faites du SEO ?',
+        description:
+          'Je peux structurer les bases: pages, titres, intentions, visibilité locale et mesure. Les sujets SEO avancés peuvent être traités plus tard.',
+      },
+      {
+        title: 'Est-ce adapté si je n’ai pas de budget Ads ?',
+        description:
+          'Oui. Mesurer les demandes, les sources de trafic et les pages utiles reste important même sans publicite payante.',
+      },
+      {
+        title: 'Est-ce que le site inclut un dashboard ?',
+        description: 'Oui, l’idée est de fournir une lecture simple des visites, sources et demandes importantes.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Parler de mon projet', href: '/prendre-un-rdv', icon: 'tabler:calendar' }]}
+  >
+    <Fragment slot="title">Vous voulez un site simple, clair et mesurable ?</Fragment>
+    <Fragment slot="subtitle">
+      On peut commencer par clarifier vos objectifs, vos pages prioritaires et les actions à mesurer.
+    </Fragment>
+  </CallToAction>
+</Layout>

@@ -1,0 +1,48 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Cas type - Dashboard data quality',
+  description: 'Cas type de dashboard marketing avec lecture des limites, anomalies et définitions KPI.',
+};
+
+const checks = [
+  'Fraîcheur des données',
+  'UTM manquantes',
+  'Transactions non retrouvées',
+  'Définitions KPI',
+  'Sources de vérité',
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="not-prose mx-auto max-w-5xl px-4 py-14 sm:px-6 md:py-20">
+    <p class="mb-4 text-sm font-bold uppercase tracking-wide text-primary">Cas type</p>
+    <h1 class="font-heading text-4xl font-bold tracking-tight text-gray-900 dark:text-white md:text-5xl">
+      Dashboard data quality
+    </h1>
+    <p class="mt-6 max-w-3xl text-xl leading-relaxed text-muted dark:text-slate-400">
+      L’équipe regarde un dashboard, mais personne ne sait quels chiffres sont fiables. L’objectif est d’ajouter une
+      lecture qualité pour rendre les décisions plus sûres.
+    </p>
+
+    <section
+      class="mt-12 rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900"
+    >
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Contrôles intégrés</h2>
+      <div class="mt-5 grid gap-3 sm:grid-cols-2">
+        {checks.map((item) => <p class="text-sm font-medium text-muted dark:text-slate-300">{item}</p>)}
+      </div>
+    </section>
+  </section>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Cadrer un dashboard', href: '/prendre-un-rdv', icon: 'tabler:calendar' }]}
+  >
+    <Fragment slot="title">Votre dashboard génère plus de débats que de décisions ?</Fragment>
+    <Fragment slot="subtitle"
+      >Une couche data quality peut clarifier les limites et les usages de chaque chiffre.</Fragment
+    >
+  </CallToAction>
+</Layout>

@@ -1,0 +1,385 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Consultant Tracking & Attribution pour e-commerce et SaaS',
+  description:
+    'Audit GA4, GTM, Consent Mode et attribution marketing. Reconciliez Ads, CRM et revenu réel pour piloter vos budgets sur des données fiables.',
+  ignoreTitleTemplate: true,
+};
+
+const heroImage = undefined;
+
+// Restore after copying the generated image into src/assets/images:
+// const heroImage = {
+//   src: '~/assets/images/hero-tracking-attribution.png',
+//   alt: 'Marketing tracking, attribution and revenue réconciliation dashboard',
+// };
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Consultant Tracking & Attribution | E-commerce & SaaS"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Prendre un RDV',
+        href: '/prendre-un-rdv',
+        icon: 'tabler:calendar',
+      },
+      {
+        text: 'En savoir plus',
+        href: '/a-propos',
+      },
+    ]}
+    image={heroImage}
+  >
+    <Fragment slot="title">
+      Fiabilisez votre tracking.
+      <span class="text-accent dark:text-white">Reconciliez GA4, Ads, CRM et revenu réel.</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        J’aide les équipes e-commerce et SaaS à comprendre pourquoi leurs chiffres ne correspondent pas, corriger les
+        erreurs critiques de tracking et piloter leurs budgets marketing sur des données fiables.
+      </span>
+
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">
+        Tracking fiable. Decisions marketing plus claires.
+      </span>
+
+      GA4 · GTM · Consent Mode · Meta Pixel/CAPI · BigQuery · Looker Studio.
+    </Fragment>
+  </Hero>
+
+  <Note title="Objectif :" description="Transformer des chiffres contradictoires en décisions marketing fiables." />
+
+  <Features
+    id="problème"
+    tagline="Le problème"
+    title="Vos outils racontent rarement la même histoire."
+    subtitle="Meta annonce un ROAS rentable. GA4 affiche moins de conversions. Le CRM attribue les leads à une autre source. Le back-office montre encore un autre revenu. Avant d’optimiser les budgets, il faut comprendre quelle partie de la chaîne de mesure est fiable."
+    columns={3}
+    items={[
+      {
+        title: 'Plateformes publicitaires',
+        description:
+          'Meta et Google Ads utilisent leurs propres fenêtres d’attribution, modèles et règles de déduplication. Ces chiffres aident à optimiser les campagnes, mais ne suffisent pas pour arbitrer un budget global.',
+        icon: 'tabler:target-arrow',
+      },
+      {
+        title: 'GA4 & tracking site',
+        description:
+          'GA4 dépend de la qualité du dataLayer, des events, du consentement, des paramètrès envoyés et des problèmes de navigation comme les paiements externes ou le cross-domain.',
+        icon: 'tabler:activity',
+      },
+      {
+        title: 'CRM & back-office',
+        description:
+          'Le CRM et le back-office sont plus proches de la réalité commerciale, mais ils perdent souvent l’origine marketing si les UTM, click IDs et définitions de revenu ne sont pas structurés.',
+        icon: 'tabler:database-dollar',
+      },
+    ]}
+  />
+
+  <Features2
+    id="services"
+    tagline="Services"
+    title="Quatre offres pour rendre votre marketing mesurable."
+    subtitle="Trois offres principales pour les équipes marketing, et une offre secondaire pour les indépendants et TPE qui veulent une présence digitale mesurable dès le départ."
+    columns={4}
+    items={[
+      {
+        title: 'Tracking Health Check',
+        description:
+          'Audit de votre tracking GA4, GTM, Ads, Consent Mode, dataLayer et conversions.<br /><br /><strong>Inclus :</strong><br />- Audit GA4 / GTM / Ads<br />- Verification Consent Mode<br />- Detection doublons et events manquants<br />- Priorisation par impact business',
+        icon: 'tabler:stethoscope',
+        callToAction: {
+          text: 'Auditer mon tracking',
+          href: '/services/tracking-health-check',
+        },
+      },
+      {
+        title: 'Tracking Fix Sprint',
+        description:
+          'Sprint court pour corriger les problèmes prioritaires: events GA4, conversions Ads, Meta Pixel/CAPI, formulaires, UTM, consentement et validation post-implémentation.<br /><br /><strong>Inclus :</strong><br />- Measurement plan<br />- Corrections GTM / GA4<br />- Tests DebugView et Tag Assistant<br />- Documentation de handover',
+        icon: 'tabler:tools',
+        callToAction: {
+          text: 'Corriger mon tracking',
+          href: '/services/tracking-fix-sprint',
+        },
+      },
+      {
+        title: 'Revenue Attribution Dashboard',
+        description:
+          'Centralisation des coûts, revenus, marges et écarts entre plateformes pour construire une lecture plus fiable du ROAS, du MER, du CAC et de la performance canal.<br /><br /><strong>Inclus :</strong><br />- Réconciliation Ads / GA4 / CRM / back-office<br />- Règles de source of truth<br />- Dashboard direction<br />- Page Data Quality',
+        icon: 'tabler:chart-dots-3',
+        callToAction: {
+          text: 'Aligner mes chiffres',
+          href: '/services/revenue-attribution-dashboard',
+        },
+      },
+      {
+        title: 'Sites & marketing mesurables',
+        description:
+          'Pour indépendants et TPE: site vitrine, refonte ou marketing local avec une base de mesure propre dès le départ.<br /><br /><strong>Inclus :</strong><br />- Site clair et orienté conversion<br />- Tracking formulaires et clics<br />- SEO local de base<br />- Dashboard simple',
+        icon: 'tabler:world-search',
+        callToAction: {
+          text: 'Créer une présence mesurable',
+          href: '/services/sites-marketing-mesurables',
+        },
+      },
+    ]}
+  />
+
+  <Steps
+    id="methodologie"
+    tagline="Methodologie"
+    title="Diagnostiquer, corriger, expliquer."
+    subtitle="Je ne cherche pas à rendre tous les chiffres identiques. Je cherche à expliquer pourquoi ils diffèrent, corriger ce qui est faux et définir quel chiffre utiliser pour quelle décision."
+    items={[
+      {
+        title: '1. Diagnose',
+        description:
+          'Analyse GA4, GTM, Ads, CRM, CMP et back-office pour identifier les doublons, pertes de signal, écarts d’attribution et problèmes de consentement.',
+        icon: 'tabler:search',
+      },
+      {
+        title: '2. Map',
+        description:
+          'Formalisation des events, paramètrès, KPIs, sources et règles de validation dans un measurement plan comprehensible par marketing et développement.',
+        icon: 'tabler:map',
+      },
+      {
+        title: '3. Fix',
+        description:
+          'Correction des erreurs prioritaires: purchase dupliqués, UTM instables, events manquants, consent mal initialisé ou conversions Ads mal configurées.',
+        icon: 'tabler:tool',
+      },
+      {
+        title: '4. Reconcile',
+        description:
+          'Comparaison GA4, plateformes publicitaires, CRM et back-office pour séparer les écarts normaux des vraies erreurs de tracking.',
+        icon: 'tabler:arrows-exchange',
+      },
+      {
+        title: '5. Explain',
+        description:
+          'Documentation claire des résultats: quels chiffres sont fiables, lesquels ne le sont pas, et quelle source utiliser pour chaque décision.',
+        icon: 'tabler:message-report',
+      },
+    ]}
+  />
+
+  <Content
+    id="data-quality"
+    tagline="Data Quality"
+    title="Un dashboard utile doit aussi dire si les données sont fiables."
+    isReversed
+    items={[
+      {
+        title: 'Transactions dupliquées',
+        description: 'Identifier les achats envoyés plusieurs fois et les revenus artificiellement gonfles.',
+        icon: 'tabler:copy',
+      },
+      {
+        title: 'Orders non retrouves',
+        description: 'Comparer les commandes trackées avec les commandes réelles du back-office.',
+        icon: 'tabler:database-x',
+      },
+      {
+        title: 'UTM manquants ou écrasés',
+        description: 'Vérifier si l’origine marketing est préservée jusqu’au lead ou à la commande.',
+        icon: 'tabler:link',
+      },
+      {
+        title: 'Ecarts entre sources',
+        description: 'Documenter les différences Ads, GA4, CRM et back-office avant de recommander un budget.',
+        icon: 'tabler:arrows-diff',
+      },
+      {
+        title: 'Fraîcheur des données',
+        description: 'Afficher quand les données ont été mises à jour et si elles peuvent être utilisées.',
+        icon: 'tabler:refresh',
+      },
+      {
+        title: 'Incidents de tracking',
+        description: 'Garder une trace des ruptures de collecte et des changements de configuration.',
+        icon: 'tabler:alert-triangle',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Data quality dashboard',
+    }}
+  >
+    <Fragment slot="content">
+      <p>
+        Un ROAS ne vaut rien si les purchases sont dupliqués. Un CAC est fragile si les leads n’ont pas d’UTM
+        persistants. Une attribution devient trompeuse si les refunds, taxes, frais de livraison et marges ne sont pas
+        définis.
+      </p>
+    </Fragment>
+  </Content>
+
+  <Features2
+    id="cas"
+    tagline="Cas d’audit"
+    title="Des exemples concrets de problèmes que je sais diagnostiquer."
+    subtitle="Les premiers cas peuvent être anonymisés ou construits sur des scénarios réalistes. L’objectif est de montrer la méthode: symptôme, investigation, cause, correction, validation, impact business."
+    columns={4}
+    items={[
+      {
+        title: 'Audit tracking e-commerce',
+        description:
+          'Purchase dupliqué, currency manquante, self-referral paiement, UTM écrasés et consent initialisé trop tard: un audit pour comprendre ce qui faussait le ROAS.',
+        icon: 'tabler:shopping-cart-search',
+        callToAction: {
+          text: 'Voir le cas',
+          href: '/cas/audit-tracking-ecommerce',
+        },
+      },
+      {
+        title: 'Revenue réconciliation',
+        description:
+          'Pourquoi Meta, GA4 et le back-office ne montrent jamais exactement le même chiffre, et comment choisir le bon referentiel pour piloter le budget.',
+        icon: 'tabler:receipt-refund',
+        callToAction: {
+          text: 'Voir le cas',
+          href: '/cas/revenue-reconciliation-meta-ga4-backoffice',
+        },
+      },
+      {
+        title: 'Consent Mode validation',
+        description:
+          'Test technique des scénarios accepter, refuser et ne pas choisir: cookies, requêtes, tags, consent state et limites de la modélisation.',
+        icon: 'tabler:shield-check',
+        callToAction: {
+          text: 'Voir le cas',
+          href: '/cas/consent-mode-validation',
+        },
+      },
+      {
+        title: 'Dashboard Data Quality',
+        description:
+          'Un dashboard direction ne doit pas seulement montrer la performance. Il doit aussi montrer si les données sont suffisamment fiables pour décider.',
+        icon: 'tabler:dashboard',
+        callToAction: {
+          text: 'Voir le cas',
+          href: '/cas/dashboard-data-quality',
+        },
+      },
+    ]}
+  />
+
+  <Content
+    id="indépendants-tpe"
+    tagline="Pour indépendants & TPE"
+    title="Une présence digitale simple, claire et mesurable."
+    items={[
+      {
+        title: 'Site vitrine clair et orienté contact',
+        description: 'Une structure simple qui aide le visiteur à comprendre, faire confiance et prendre contact.',
+        icon: 'tabler:layout',
+      },
+      {
+        title: 'Structure SEO de base',
+        description: 'Des pages organisees autour des services, de la zone geographique et des intentions client.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Tracking des formulaires et clics',
+        description: 'Les demandes de contact, appels, emails et clics importants sont mesurables dès le départ.',
+        icon: 'tabler:cursor-text',
+      },
+      {
+        title: 'Dashboard simple',
+        description: 'Une lecture claire des visites, demandes, sources et actions qui génèrent des opportunites.',
+        icon: 'tabler:chart-bar',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80',
+      alt: 'Simple measurable digital présence',
+    }}
+  >
+    <Fragment slot="content">
+      <p>
+        Toutes les entreprises n’ont pas une équipe marketing, un CRM ou un budget média important. Pour les
+        indépendants, artisans et petites structures, je propose aussi une offre plus accessible: construire ou refondre
+        une présence digitale capable de générer des demandes et de mesurer les résultats dès le départ.
+      </p>
+      <p class="mt-4">
+        Cette offre reste coherente avec mon cœur de métier: rendre les actions marketing mesurables, même pour les
+        petites structures.
+      </p>
+    </Fragment>
+  </Content>
+
+  <BlogLatestPosts
+    title="Ressources pour mieux comprendre vos chiffres marketing."
+    information="Des articles courts et pratiques pour diagnostiquer les écarts entre GA4, les plateformes publicitaires, le CRM et le back-office."
+  />
+
+  <FAQs
+    id="faq"
+    tagline="FAQ"
+    title="Questions fréquentes"
+    columns={2}
+    items={[
+      {
+        title: 'Est-ce que vous rendez tous mes chiffres identiques ?',
+        description:
+          'Non. L’objectif n’est pas de forcer GA4, Meta, Google Ads, CRM et back-office à afficher le même chiffre. L’objectif est d’expliquer les écarts, corriger les erreurs et définir quelle source utiliser pour chaque décision.',
+        icon: 'tabler:help-circle',
+      },
+      {
+        title: 'Est-ce que vous garantissez la conformité RGPD ?',
+        description:
+          'Non. Je peux réaliser un audit technique du consentement et vérifier que les tags respectent les signaux de consentement. La validation juridique doit rester entre vos mains ou celles de vos conseils juridiques.',
+        icon: 'tabler:shield',
+      },
+      {
+        title: 'Est-ce que vous travaillez avec les petites entreprises ?',
+        description:
+          'Oui, via une offre secondaire orientée sites et marketing mesurables. Le principe reste le même: clarifier les objectifs, suivre les conversions et rendre les résultats lisibles.',
+        icon: 'tabler:building-store',
+      },
+      {
+        title: 'De quoi avez-vous besoin pour commencer ?',
+        description:
+          'Idéalement: accès GA4, GTM, plateformes Ads, CMS ou site, CMP, CRM ou back-office, ainsi qu’une description des chiffres qui ne correspondent pas.',
+        icon: 'tabler:clipboard-list',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Prendre un RDV',
+        href: '/prendre-un-rdv',
+        icon: 'tabler:calendar',
+      },
+    ]}
+  >
+    <Fragment slot="title">Vous voulez savoir ce qui fausse vos chiffres ?</Fragment>
+
+    <Fragment slot="subtitle">
+      En 30 minutes, nous pouvons identifier les principaux écarts entre GA4, Ads, CRM et revenu réel, puis définir les
+      corrections à prioriser.
+    </Fragment>
+  </CallToAction>
+</Layout>
